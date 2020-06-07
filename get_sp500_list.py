@@ -41,7 +41,9 @@ def get_data_from_yahoo(reload_sp500=False):
     start = dt.datetime(2019, 1, 1)
     end = dt.datetime.now
     
-    for ticker in tickers:
+    ticker_three = ['MSFT', 'JPM', 'JNJ']
+    for ticker in ticker_three:
+    # for ticker in tickers:
         # save progress just in case connection breaks
         if not os.path.exists('stock_dfs/{}.csv'.format(ticker)):
             df = yf.download(ticker, period='2y')
